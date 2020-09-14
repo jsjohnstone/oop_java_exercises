@@ -8,11 +8,11 @@ interface Cat {
     public Integer getAverageHeight();
     public String eat();
 }
-
-class DomesticCat implements Cat {
+abstract class AbstractCat implements Cat {
     private Boolean asleep = false;
-    private Integer height = 23;
-    private String setting = "domestic";
+    private Integer height;
+    private String setting;
+    private String eatResponse;
 
     public Boolean isAsleep() {
         return asleep;
@@ -35,66 +35,12 @@ class DomesticCat implements Cat {
     }
 
     public String eat() {
-        return "Purrrrrrr";
-    }
-}
-
-class LionCat implements Cat {
-    private Boolean asleep = false;
-    private Integer height = 1100;
-    private String setting = "wild";
-
-    public Boolean isAsleep() {
-        return asleep;
+        return eatResponse;
     }
 
-    public void goToSleep() {
-        this.asleep = true;
-    }
-
-    public void wakeUp() {
-        this.asleep = false;
-    }
-
-    public String getSetting() {
-        return setting;
-    }
-
-    public Integer getAverageHeight() {
-        return height;
-    }
-
-    public String eat() {
-        return "Roar!!!!";
-    }
-}
-
-class CheetahCat implements Cat {
-    private Boolean asleep = false;
-    private Integer height = 1100;
-    private String setting = "wild";
-
-    public Boolean isAsleep() {
-        return asleep;
-    }
-
-    public void goToSleep() {
-        this.asleep = true;
-    }
-
-    public void wakeUp() {
-        this.asleep = false;
-    }
-
-    public String getSetting() {
-        return setting;
-    }
-
-    public Integer getAverageHeight() {
-        return height;
-    }
-
-    public String eat() {
-        return "Zzzzzzz";
+    public AbstractCat(int height, String setting, String eatResponse) {
+        this.height = height;
+        this.setting = setting;
+        this.eatResponse = eatResponse;
     }
 }
